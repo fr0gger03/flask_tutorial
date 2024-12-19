@@ -1,0 +1,28 @@
+services:
+  frontend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      tags:
+        - "thomastwyman557/rp_flask_board"
+    ports:
+      - 80:8000
+
+    # Docker Compose automatically looks for '.env' files at the root of the project - or adjacent to the Compose file itself.
+    # It's a best practice to exclude any '.env' files from source control / git.
+    # Be sure to add your own .env file(s) to ensure proper application functionality.
+    environment:
+      ENVIRONMENT: ${ENVIRONMENT}
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
+      FLASK_DATABASE: ${FLASK_DATABASE}
+    develop:
+      watch:
+        - action: sync
+          path: ./board/static
+          target: /app/static
+        - action: rebuild
+          path: ./board/templates
+          target: /board/templates
+        - action: rebuild
+          path: ./board/requirements.txt
+
