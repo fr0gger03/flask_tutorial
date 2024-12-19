@@ -59,10 +59,10 @@ __pypackages__/
 .env
 .venv
 env/
-venv/
+venv*
 ENV/
 env.bak/
 venv.bak/
 
 # PyPI configuration file
-.pypirc
+.pypircvenv-flask
