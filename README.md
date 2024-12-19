@@ -15,3 +15,11 @@ In this tutorial, you’ll learn how to:
 ## My customizations
 
 I have altered the original project to leverage containers, and Docker Compose locally for container-led development purposes.
+
+Changes from original include:
+* addition of Docker files - Dockerfile, compose.yaml
+* had to use virtual environment locally to initialize sqlite database
+* added use of environment variables to compose.yaml for proper execution
+* initialized Flask application in app.py, rather than __init__
+* import statements were adjusted - tutorial called for importing from "board.xxxx" which didn't work due to project initialization changes
+

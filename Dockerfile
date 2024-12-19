@@ -22,8 +22,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     --mount=type=bind,source=requirements.txt,target=requirements.txt \
     python -m pip install -r requirements.txt
 
-# COPY . .
-COPY ./board/ /app/
+    COPY ./board/ /app/
 RUN chown -R appuser:appuser /app  && chmod -R 1777 /app
 USER appuser
 EXPOSE 8000
