@@ -15,6 +15,10 @@ services:
       ENVIRONMENT: ${ENVIRONMENT}
       FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
       FLASK_DATABASE: ${FLASK_DATABASE}
+
+    # Docker Compose Watch allows for real-time updates to your code, and 
+    # will either synchronize ('sync'), or rebuild ('rebuild') your project, depending on how you ask Compose to behave.
+    # use 'docker compose up --watch' to start your app in 'watch' mode
     develop:
       watch:
         - action: sync
