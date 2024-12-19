@@ -11,3 +11,7 @@ In this tutorial, you’ll learn how to:
 * Add multiple pages with blueprints
 * Leverage Jinja templates
 * Store static files
+
+## My customizations
+
+I have altered the original project to leverage containers, and Docker Compose locally for container-led development purposes.
